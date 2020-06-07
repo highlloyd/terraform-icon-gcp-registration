@@ -1,3 +1,10 @@
+resource "google_compute_network" "this" {
+  count = var.public_ip == "" ? 1 : 0
+  name = "my-network"
+  
+}
+
+
 resource "google_storage_bucket" "this" {
     count = var.details_endpoint == "" ? 1 : 0
     name = local.bucket_name
@@ -16,7 +23,7 @@ resource "google_storage_bucket" "this" {
 resource "google_storage_bucket_acl" "this" {
   bucket = google_storage_bucket.this.name
 
-   predefined_acl = publicRead
+   predefined_acl = "publicRead"
 }
 
 ########
