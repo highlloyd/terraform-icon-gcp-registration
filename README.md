@@ -5,7 +5,14 @@
 
 ## Features
 
-This module...
+This module helps with registering a node on the ICON Blockchain. It does three main things.
+
+- Creates an elastic IP that will be your main IP that your node will use to run and applies a number of tags on the
+resource so it can be queried to be attached to instances later
+- Puts the necessary details.json file in a bucket publicly accessible along with logos
+- Runs `preptools` to register the node or update the info
+
+**Make sure you have 2000 ICX registration fee in your wallet for mainnet and you have testnet tokens for testnet**
 
 ## Terraform Versions
 
